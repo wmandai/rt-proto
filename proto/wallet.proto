@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package wallet;
+
+// Define the user balance request message
+message BalanceRequest {
+  string user_id = 1;
+}
+
+// Define the user balance response message
+message BalanceResponse {
+  double balance = 1;
+}
+
+// Define the deposit request message
+message DepositRequest {
+  string user_id = 1;
+  double amount = 2;
+}
+
+// Define the deposit response message
+message DepositResponse {
+  bool success = 1;
+}
+
+// Define the withdraw request message
+message WithdrawRequest {
+  string user_id = 1;
+  double amount = 2;
+}
+
+// Define the withdraw response message
+message WithdrawResponse {
+  bool success = 1;
+}
+
+// Define the transfer request message
+message TransferRequest {
+  string from_user_id = 1;
+  string to_user_id = 2;
+  double amount = 3;
+}
+
+// Define the transfer response message
+message TransferResponse {
+  bool success = 1;
+}
+
+// Define the Wallet service
+service WalletService {
+  // RPC method to get the user balance
+  rpc Balance(BalanceRequest) returns (BalanceResponse) {}
+
+  // RPC method to deposit to the user's account
+  rpc Deposit(DepositRequest) returns (DepositResponse) {}
+
+  // RPC method to withdraw from the user's account
+  rpc Withdraw(WithdrawRequest) returns (WithdrawResponse) {}
+
+  // RPC method to transfer from one user's account to another
+  rpc Transfer(TransferRequest) returns (TransferResponse) {}
+}
