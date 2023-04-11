@@ -21,7 +21,7 @@ message DepositRequest {
 // Define the deposit response message
 message DepositResponse {
   bool success = 1;
-  ErrorResponse error = 2;
+  string message = 2;
 }
 
 // Define the withdraw request message
@@ -45,10 +45,6 @@ message TransferRequest {
 // Define the transfer response message
 message TransferResponse {
   bool success = 1;
-}
-
-message ErrorResponse {
-  string error = 1;
 }
 
 // Define the Wallet service
