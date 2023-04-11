@@ -21,7 +21,7 @@ message DepositRequest {
 // Define the deposit response message
 message DepositResponse {
   bool success = 1;
-  ErrorResponse errorResponse = 2;
+  ErrorResponse error = 2;
 }
 
 // Define the withdraw request message
