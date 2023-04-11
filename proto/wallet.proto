@@ -49,8 +49,7 @@ message TransferResponse {
 
 message ErrorResponse {
   string success = 1;
-  string statusCode = 2;
-  string error = 3;
+  string error = 2;
 }
 
 // Define the Wallet service
