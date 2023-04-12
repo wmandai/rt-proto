@@ -8,6 +8,12 @@ service AuthService {
   rpc Validate (ValidateRequest) returns (ValidateResponse) {}
 }
 
+// JWT Token
+message TokenResponse {
+  string accessToken = 1;
+  string refreshToken = 2;
+}
+
 // Register
 
 message RegisterRequest {
@@ -31,6 +37,7 @@ message LoginResponse {
   int32 status = 1;
   repeated string error = 2;
   string token = 3;
+  string refreshToken = 4;
 }
 
 // Validate
