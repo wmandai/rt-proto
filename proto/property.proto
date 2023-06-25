@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package property;
+
+service PropertyService {
+  rpc CreateProperty (CreatePropertyRequest) returns (CreatePropertyResponse) {}
+}
+message CreatePropertyRequest {
+  int32 id = 1;
+  int32 customer_id = 2;
+  int32 user_id = 3;
+  int32 property_type_id = 4;
+  string reference = 5;
+  string name = 6;
+  int32 location_id = 7;
+  string address = 8;
+  string built_year = 9;
+  string photo_id = 11;
+  string notes = 12;
+  float commission = 13;
+  int32 num_units = 14;
+  int32 floors = 15;
+}
+
+message CreatePropertyResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  int32 id = 3;
+}
