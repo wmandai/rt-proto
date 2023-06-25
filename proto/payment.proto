@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package payment;
+
+service PaymentService {
+  rpc CreatePayment (CreatePaymentRequest) returns (CreatePaymentResponse) {}
+  rpc FindOne (FindOneRequest) returns (FindOneResponse) {}
+}
+
+// CreatePayment
+
+message CreatePaymentRequest {
+  int32 customer_id = 1;
+  int32 user_id = 2;
+  int32 occupant_id = 3;
+  int32 property_id = 4;
+  int32 unit_id = 5;
+  int32 invoice_id = 6;
+  string reference = 7;
+  string external_reference = 8;
+  int32 amount = 9;
+  string notes = 10;
+  string payment_date = 11;
+  string currency = 12;
+  bool send_email = 13;
+  int32 method_id = 14;
+  string meta = 15;
+  string refunded_at = 16;
+  string created_at = 17;
+  string updated_at = 18;
+  string deleted_at = 19;
+}
+
+// FindOne
+
+message FindOneData {
+  int32 id = 1;
+  int32 customer_id = 2;
+  int32 user_id = 3;
+  int32 occupant_id = 4;
+  int32 property_id = 5;
+  int32 unit_id = 6;
+  int32 invoice_id = 7;
+  string reference = 8;
+  string external_reference = 9;
+  int32 amount = 10;
+  string notes = 11;
+  string payment_date = 12;
+  string currency = 13;
+  bool send_email = 14;
+  int32 method_id = 15;
+  string meta = 16;
+  string refunded_at = 17;
+  string created_at = 18;
+}
+
+message FindOneRequest {
+  int32 id = 1;
+}
+
+message FindOneResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  FindOneData data = 3;
+}
+
+message CreatePaymentResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  int32 id = 3;
+}
