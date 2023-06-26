@@ -23,7 +23,7 @@ message CreatePaymentRequest {
   optional string payment_date = 11;
   string currency = 12;
   bool send_email = 13;
-  int32 method_id = 14;
+  int32 payment_method_id = 14;
   optional string meta = 15;
 }
 
@@ -44,7 +44,7 @@ message FindOneData {
   string payment_date = 12;
   string currency = 13;
   bool send_email = 14;
-  int32 method_id = 15;
+  int32 payment_method_id = 15;
   string meta = 16;
 }
 
