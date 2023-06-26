@@ -22,7 +22,7 @@ message CreatePaymentRequest {
   string notes = 10;
   optional string payment_date = 11;
   string currency = 12;
-  bool send_email = 13;
+  optional bool send_email = 13;
   int32 payment_method_id = 14;
   optional string meta = 15;
 }
