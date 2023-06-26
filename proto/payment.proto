@@ -46,8 +46,6 @@ message FindOneData {
   bool send_email = 14;
   int32 method_id = 15;
   string meta = 16;
-  string refunded_at = 17;
-  string created_at = 18;
 }
 
 message FindOneRequest {
