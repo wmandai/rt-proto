@@ -24,7 +24,7 @@ message CreatePaymentRequest {
   string currency = 12;
   bool send_email = 13;
   int32 method_id = 14;
-  string meta = 15;
+  optional string meta = 15;
 }
 
 // FindOne
