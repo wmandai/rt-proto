@@ -20,7 +20,7 @@ message CreatePaymentRequest {
   string external_reference = 8;
   int32 amount = 9;
   string notes = 10;
-  string payment_date = 11;
+  optional string payment_date = 11;
   string currency = 12;
   bool send_email = 13;
   int32 method_id = 14;
