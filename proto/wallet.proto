@@ -47,8 +47,23 @@ message TransferResponse {
   bool success = 1;
 }
 
+// Define the create wallet request message
+message CreateWalletRequest {
+  string user_id = 1;
+  string name = 2;
+}
+
+// Define the create wallet response message
+message CreateWalletResponse {
+  bool success = 1;
+  repeated string messages = 2;
+}
+
 // Define the Wallet service
 service WalletService {
+  // create a wallet for a user
+  rpc CreateWallet(CreateWalletRequest) returns (CreateWalletResponse) {}
+
   // RPC method to get the user balance
   rpc Balance(BalanceRequest) returns (BalanceResponse) {}
 
