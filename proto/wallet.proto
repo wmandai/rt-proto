@@ -62,7 +62,7 @@ message CreateWalletResponse {
 // Define the Wallet service
 service WalletService {
   // create a wallet for a user
-  rpc CreateWallet(CreateWalletRequest) returns (CreateWalletResponse) {}
+  rpc Create(CreateWalletRequest) returns (CreateWalletResponse) {}
 
   // RPC method to get the user balance
   rpc Balance(BalanceRequest) returns (BalanceResponse) {}
