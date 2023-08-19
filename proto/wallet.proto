@@ -51,6 +51,7 @@ message TransferResponse {
 message CreateWalletRequest {
   string user_id = 1;
   string name = 2;
+  string currency = 3;
 }
 
 // Define the create wallet response message
