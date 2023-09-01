@@ -7,6 +7,7 @@ service AuthService {
   rpc Login (LoginRequest) returns (LoginResponse) {}
   rpc Validate (ValidateRequest) returns (ValidateResponse) {}
   rpc Refresh (RefreshRequest) returns (RefreshResponse) {}
+  rpc MagicLogin (MagicLoginRequest) returns (MagicLoginResponse) {}
 }
 
 // Register
@@ -57,6 +58,18 @@ message RefreshRequest {
 }
 
 message RefreshResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  string token = 3;
+  string refreshToken = 4;
+}
+
+// MagicLogin
+message MagicLoginRequest {
+  string email = 1;
+}
+
+message MagicLoginResponse {
   int32 status = 1;
   repeated string error = 2;
   string token = 3;

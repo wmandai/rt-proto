@@ -15,7 +15,8 @@ message BalanceResponse {
 // Define the deposit request message
 message DepositRequest {
   string user_id = 1;
-  double amount = 2;
+  string wallet_id = 2;
+  double amount = 3;
 }
 
 // Define the deposit response message
@@ -27,24 +28,27 @@ message DepositResponse {
 // Define the withdraw request message
 message WithdrawRequest {
   string user_id = 1;
-  double amount = 2;
+  string wallet_id = 2;
+  double amount = 3;
 }
 
 // Define the withdraw response message
 message WithdrawResponse {
   bool success = 1;
+  repeated string messages = 2;
 }
 
 // Define the transfer request message
 message TransferRequest {
-  string from_user_id = 1;
-  string to_user_id = 2;
+  string source_wallet_id = 1;
+  string destination_wallet_id = 2;
   double amount = 3;
 }
 
 // Define the transfer response message
 message TransferResponse {
   bool success = 1;
+  repeated string messages = 2;
 }
 
 // Define the create wallet request message
@@ -52,6 +56,7 @@ message CreateWalletRequest {
   string user_id = 1;
   string name = 2;
   string currency = 3;
+  bool is_default = 4;
 }
 
 // Define the create wallet response message
@@ -62,8 +67,7 @@ message CreateWalletResponse {
 
 // Define the get wallet request message
 message GetWalletRequest {
-  string user_id = 1;
-  string wallet_id = 2;
+  string wallet_id = 1;
 }
 
 // Define the get wallet response message
@@ -90,6 +94,8 @@ message Wallet {
   string currency = 3;
   double balance = 4;
   bool is_default = 5;
+  string holder_type = 6;
+  string holder_id = 7;
 }
 
 // Define the Wallet service
